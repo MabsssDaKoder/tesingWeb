@@ -280,7 +280,7 @@
                 <form 
                       style="flex:1; margin:0;">
                     @csrf
-                   <a href="{{ url('/login') }}"
+                   <a href="{{ url('/lo') }}"
     style="flex:1; display:block; padding:0.8rem 1.5rem; border-radius:7px;
           font-weight:600; font-size:0.95rem; cursor:pointer;
           background:#dc2626; color:white; border:none;
@@ -297,105 +297,13 @@
 </div>
 
 <style>
-@keyframes logoutModalIn {
-    from { opacity:0; transform:scale(0.94) translateY(-12px); }
-    to   { opacity:1; transform:scale(1)    translateY(0); }
-}
+
 </style>
 
 {{-- ══════════════════════════════════════
      JS — Sidebar toggle + Notif panel
 ══════════════════════════════════════ --}}
-<script>
-(function () {
-    /* ── Sidebar ── */
-    const sidebar   = document.getElementById('sidebar');
-    const overlay   = document.getElementById('sidebarOverlay');
-    const hamburger = document.getElementById('hamburger');
-
-    function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('visible');
-        hamburger.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('visible');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', function () {
-        sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-    });
-
-    overlay.addEventListener('click', closeSidebar);
-
-    sidebar.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (window.innerWidth < 1024) closeSidebar();
-        });
-    });
-
-    /* ── Notification Bell ── */
-    const bell  = document.getElementById('notifBell');
-    const panel = document.getElementById('notifPanel');
-
-    bell.addEventListener('click', function (e) {
-        e.stopPropagation();
-        panel.classList.toggle('open');
-    });
-
-    bell.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            panel.classList.toggle('open');
-        }
-    });
-
-    document.addEventListener('click', function (e) {
-        if (!bell.contains(e.target)) panel.classList.remove('open');
-    });
-
-    window.addEventListener('resize', function () {
-        if (window.innerWidth >= 1024) closeSidebar();
-    });
-
-    document.addEventListener('click', function (e) {
-        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-            closeSidebar();
-        }
-    });
-
-    /* ── Escape closes both notif panel and logout modal ── */
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            panel.classList.remove('open');
-            hideLogoutModal();
-        }
-    });
-})();
-
-/* ── Logout Modal ── */
-function showLogoutModal() {
-    const overlay = document.getElementById('logout-modal-overlay');
-    overlay.style.display = 'flex';
-}
-
-function hideLogoutModal() {
-    const overlay = document.getElementById('logout-modal-overlay');
-    overlay.style.display = 'none';
-}
-
-/* Close on backdrop click */
-document.getElementById('logout-modal-overlay').addEventListener('click', function (e) {
-    if (e.target === this) hideLogoutModal();
-});
-</script>
+<<script src="{{ asset('js/admin/admin-layout.js') }}"></script>
 
 @stack('scripts')
 </body>
