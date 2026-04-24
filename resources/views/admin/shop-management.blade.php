@@ -4,17 +4,12 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/admin/shop-management.css') }}">
-<style>
- 
-</style>
+<link rel="stylesheet" href="{{ asset('css/admin/addon-form-styles.css') }}">
 @endsection
 
 @section('content')
 
-<div class="page-title">Shop Management
-        
-
-</div>
+<div class="page-title">Shop Management</div>
 
 <div class="content-wrapper">
 
@@ -125,16 +120,7 @@
          CUSTOM ADD-ONS SECTION
     ══════════════════════════════════════════════ --}}
     <div class="section">
-        {{-- Header with Select Branch aligned to the right --}}
-        <div class="section-header">
-            <span>New Add-ons</span>
-            <select class="branch-select" id="select_branch" onchange="onBranchChange(this.value)">
-                <option value="">Select Branch</option>
-                <option value="branch1">Branch 1</option>
-                <option value="branch2">Branch 2</option>
-                <option value="branch3">Branch 3</option>
-            </select>
-        </div>
+        <div class="section-header">New Add-ons</div>
         <div class="section-body">
 
             <div class="addons-container">
@@ -143,34 +129,43 @@
                 <div class="addons-form-card">
 
                     <div class="form-group">
-                        <label>Item name :</label>
-                        <input type="text" id="addon_name" placeholder="Enter item name">
+                        <label>Item name</label>
+                        <input type="text" id="addon_name" placeholder="Click New to start">
                     </div>
 
                     <div class="form-group">
                         <label>Category</label>
                         <div class="category-buttons">
-                            <button class="cat-btn active" data-category="powdered">Powdered Detergent</button>
-                            <button class="cat-btn" data-category="liquid">Liquid Detergent</button>
-                            <button class="cat-btn" data-category="conditioner">Fabric Conditioner</button>
+                            <button class="cat-btn" data-category="powdered" onclick="selectCategory(this)">Powdered Detergent</button>
+                            <button class="cat-btn" data-category="liquid" onclick="selectCategory(this)">Liquid Detergent</button>
+                            <button class="cat-btn" data-category="conditioner" onclick="selectCategory(this)">Fabric Conditioner</button>
                         </div>
+                        <input type="hidden" id="selected_category" value="">
                     </div>
 
                     <div class="form-group">
-                        <label>Price:</label>
-                        <div class="price-row">
-                            <input type="number" id="addon_price" placeholder="Per packs...">
-                            <input type="number" id="addon_scoops" placeholder="Per scoops...">
+                        <label>Price</label>
+                        <div class="price-input-group">
+                            <button class="price-btn" id="pack_btn" onclick="selectPriceType('pack')" disabled>
+                                Per Pack
+                            </button>
+                            <input type="number" id="addon_price" placeholder="₱0.00" disabled>
+                            
+                            <button class="price-btn" id="scoop_btn" onclick="selectPriceType('scoop')" disabled>
+                                Per Scoop
+                            </button>
+                            <input type="number" id="addon_scoops" placeholder="₱0.00" disabled>
                         </div>
                     </div>
 
-                    {{-- Buttons: New | Add | Edit | Confirm | Cancel --}}
+                    {{-- Buttons: Add | Cancel | Edit | Confirm | Delete --}}
                     <div class="form-actions">
-                        <button class="action-btn new"     onclick="newAddonForm()">New</button>
-                        <button class="action-btn add"     onclick="addNewAddon()">Add</button>
-                        <button class="action-btn edit"    onclick="editAddonStart()">Edit</button>
+                        <button class="action-btn add" onclick="addNewAddon()" id="addAddonBtn">Add</button>
+                        <button class="action-btn cancel" onclick="clearFormFields()">Cancel</button>
+                        <button class="action-btn edit" onclick="editAddonStart()" id="editAddonBtn" style="display:none;">Edit</button>
                         <button class="action-btn confirm" id="confirmAddonBtn" onclick="saveEditAddon()" style="display:none;">Confirm</button>
-                        <button class="action-btn cancel"  id="cancelAddonBtn"  onclick="cancelEditAddon()" style="display:none;">Cancel</button>
+                        <button class="action-btn delete" id="deleteAddonBtn" onclick="deleteCurrentAddon()" style="display:none;">Delete</button>
+                        <button class="action-btn cancel" id="cancelAddonBtn" onclick="cancelEditAddon()" style="display:none;">Cancel</button>
                     </div>
 
                 </div>
@@ -262,7 +257,4 @@
     </div>
 </div>
 
-<script src="{{ asset('js/admin/shop-management.js') }}">
-
-</script>
 @endsection

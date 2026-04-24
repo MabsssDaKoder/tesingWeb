@@ -79,3 +79,6 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::get('/queue/json',               [LaundryController::class, 'ordersJson'])->name('queue.json');
     Route::patch('/laundry/{order}/status', [LaundryController::class, 'updateStatus'])->name('laundry.status');
 });
+Route::get('/forgot-pass', function () {
+    return view('forgot-pass');
+});

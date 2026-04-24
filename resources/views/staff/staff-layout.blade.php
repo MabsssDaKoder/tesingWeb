@@ -21,10 +21,7 @@
 
         <div class="sidebar-top">
             <div class="brand">
-                <div class="brand-logo">
-                    <img src="{{ asset('images/washdepot-logo.png') }}" alt="WashDepot"
-                         onerror="this.style.display='none'">
-                </div>
+                
                 <div class="brand-text">
                     <span class="brand-name">WashDepot</span>
                     <span class="brand-role">Staff</span>

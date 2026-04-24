@@ -6,47 +6,74 @@ function showTab(tab, btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + tab).classList.remove('hidden');
     btn.classList.add('active');
-
-    // Draw chart for selected tab
     drawChart(tab);
 }
 
 // ==========================================
-// PIE CHART DATA
-// Change these values to update the charts
+// SERVICE TYPE DATA
+// Labels: Wash Only, Wash & Dry, Wash & Fold, Dry Clean
+// Values: count per service type
 // ==========================================
 
-// DAILY color stats
-const daily_color_stats = [50, 35, 5, 10]; // white, black, colored, others
+const serviceTypes = ['Wash Only', 'Wash & Dry', 'Wash & Fold', 'Dry Clean'];
 
-// WEEKLY color stats
-const weekly_color_stats = [50, 25, 15, 10];
+// VARIABLE: daily_service_stats
+const daily_service_stats   = [40, 30, 20, 11]; // counts per service type
 
-// MONTHLY color stats
-const monthly_color_stats = [45, 30, 15, 10];
+// VARIABLE: weekly_service_stats
+const weekly_service_stats  = [180, 150, 110, 60];
 
-// ANNUALLY color stats
-const annually_color_stats = [48, 28, 14, 10];
+// VARIABLE: monthly_service_stats
+const monthly_service_stats = [820, 600, 430, 250];
 
-// Chart colors
-const chartColors = ['#e0e0e0', '#1a1a1a', '#8B4513', '#607d8b'];
+// VARIABLE: annually_service_stats
+const annually_service_stats = [9800, 7500, 5200, 2500];
 
-// Store chart instances
+// Chart colors — one per service type
+const serviceColors = ['#2563eb', '#0ea5e9', '#6366f1', '#8b5cf6'];
+
+// Store chart instances to allow destroy on redraw
 const chartInstances = {};
 
+// ==========================================
+// BUILD DYNAMIC LEGEND
+// ==========================================
+function buildLegend(legendEl, data) {
+    const total = data.reduce((a, b) => a + b, 0);
+    legendEl.innerHTML = '';
+
+    serviceTypes.forEach((label, i) => {
+        const pct  = total > 0 ? Math.round((data[i] / total) * 100) : 0;
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+            <span class="dot" style="background:${serviceColors[i]};"></span>
+            ${pct}% ${label}
+        `;
+        legendEl.appendChild(item);
+    });
+}
+
+// ==========================================
+// DRAW PIE CHART
+// ==========================================
 function drawChart(tab) {
     const dataMap = {
-        daily:    daily_color_stats,
-        weekly:   weekly_color_stats,
-        monthly:  monthly_color_stats,
-        annually: annually_color_stats,
+        daily:    daily_service_stats,
+        weekly:   weekly_service_stats,
+        monthly:  monthly_service_stats,
+        annually: annually_service_stats,
     };
 
-    const canvasId = `${tab}-color-chart`;
-    const canvas   = document.getElementById(canvasId);
-    if (!canvas) return;
+    const canvasId  = `${tab}-service-chart`;
+    const legendId  = `${tab}-service-legend`;
+    const canvas    = document.getElementById(canvasId);
+    const legendEl  = document.getElementById(legendId);
+    if (!canvas || !legendEl) return;
 
-    // Destroy existing chart if any
+    const data = dataMap[tab];
+
+    // Destroy previous instance
     if (chartInstances[tab]) {
         chartInstances[tab].destroy();
     }
@@ -54,11 +81,12 @@ function drawChart(tab) {
     chartInstances[tab] = new Chart(canvas, {
         type: 'pie',
         data: {
-            labels: ['White', 'Black', 'Colored', 'Others'],
+            labels: serviceTypes,
             datasets: [{
-                data: dataMap[tab],
-                backgroundColor: chartColors,
-                borderWidth: 1
+                data: data,
+                backgroundColor: serviceColors,
+                borderWidth: 2,
+                borderColor: '#ffffff'
             }]
         },
         options: {
@@ -66,6 +94,8 @@ function drawChart(tab) {
             responsive: false
         }
     });
+
+    buildLegend(legendEl, data);
 }
 
 // Draw initial chart on page load

@@ -19,7 +19,6 @@
             <div class="bubble"></div>
             <div class="bubble"></div>
             <div class="bubble"></div>
-            <div class="hero-logo">🧺</div>
             <h1 class="hero-title">Wash<span>Depot</span></h1>
             <p class="hero-sub">Laundry Queue Management</p>
         </div>

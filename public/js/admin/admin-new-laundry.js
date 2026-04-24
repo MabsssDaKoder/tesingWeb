@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════
-//  WashDepot — staff-new-laundry.js
-//  Place in: public/js/admin/staff-new-laundry.js
+//  WashDepot — admin-new-laundry.js
+//  Place in: public/js/admin/admin-new-laundry.js
 // ═══════════════════════════════════════════════════
 
 const RUSH_FEE  = 50;
@@ -123,7 +123,7 @@ async function generateReceipt() {
     const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || '';
 
     try {
-        const res = await fetch('/staff/laundry', {
+        const res = await fetch('/admin/laundry', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrfToken },
             body: JSON.stringify({

@@ -21,7 +21,6 @@
         {{-- ── PERSONAL INFORMATION ── --}}
         <div class="card">
             <div class="card-header">
-                <div class="card-header-icon">👤</div>
                 <h2 class="card-header-title">Personal Information</h2>
             </div>
             <div class="card-body">
@@ -29,17 +28,14 @@
                 {{-- Avatar --}}
                 <div class="avatar-section">
                     <div class="avatar-wrapper">
-                        <div class="avatar">AN</div>
-                        <div class="avatar-badge"></div>
+                        
                     </div>
                     <div class="avatar-info">
                         <h3>Admin's Name</h3>
                         <span class="role-badge">Admin / Owner</span>
                         <p>Last login: Today at 8:32 AM</p>
                     </div>
-                    <button class="avatar-upload-btn" onclick="document.getElementById('avatar_input').click()">
-                        📷 Change Photo
-                    </button>
+                  
                     <input type="file" id="avatar_input" accept="image/*" style="display:none">
                 </div>
 
@@ -80,7 +76,6 @@
         {{-- ── CHANGE PASSWORD ── --}}
         <div class="card">
             <div class="card-header">
-                <div class="card-header-icon">🔒</div>
                 <h2 class="card-header-title">Change Password</h2>
             </div>
             <div class="card-body">
@@ -118,7 +113,6 @@
         {{-- ── NOTIFICATIONS ── --}}
         <div class="card">
             <div class="card-header">
-                <div class="card-header-icon">🔔</div>
                 <h2 class="card-header-title">Notification Preferences</h2>
             </div>
             <div class="card-body">

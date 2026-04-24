@@ -26,19 +26,14 @@
 
                 <div class="avatar-section">
                     <div class="avatar-wrapper">
-                        <div class="avatar">
-                            {{ strtoupper(substr(auth()->user()?->name ?? 'S', 0, 2)) }}
-                        </div>
-                        <div class="avatar-badge"></div>
+                       
                     </div>
                     <div class="avatar-info">
                         <h3>{{ auth()->user()?->name ?? "Staff's Name" }}</h3>
                         <span class="role-badge">Staff · {{ auth()->user()?->branch ?? 'Branch A' }}</span>
                         <p>Last login: Today at {{ now()->format('g:i A') }}</p>
                     </div>
-                    <button class="avatar-upload-btn" onclick="document.getElementById('avatar_input').click()">
-                        📷 Change Photo
-                    </button>
+                    
                     <input type="file" id="avatar_input" accept="image/*" style="display:none">
                 </div>
 

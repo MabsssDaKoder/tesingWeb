@@ -12,9 +12,19 @@
 
 <div class="inventory-card">
 
+    {{-- Branch Selector --}}
+    <div class="branch-bar">
+        <label class="branch-label">Branch:</label>
+        <div class="branch-tabs" id="branchTabs">
+            <button class="branch-tab active" data-branch="1">Branch 1</button>
+            <button class="branch-tab" data-branch="2">Branch 2</button>
+            <button class="branch-tab" data-branch="3">Branch 3</button>
+        </div>
+    </div>
+
     {{-- Search & Categories --}}
     <div class="toolbar">
-        <input type="text" class="search-input" placeholder="Search Item name...">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search Item name...">
         <button class="btn-categories">Categories</button>
     </div>
 
@@ -31,13 +41,11 @@
                     <th>Action</th>
                 </tr>
             </thead>
-        
-                <tbody id="inventory-body">
-    <tr>
-        <td colspan="6" class="empty-msg">No items found.</td>
-    </tr>
-</tbody>
-           
+            <tbody id="inventory-body">
+                <tr>
+                    <td colspan="6" class="empty-msg">No items found.</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
@@ -54,7 +62,10 @@
     </div>
 
     <div class="item-form">
-        <h3 class="form-title">Item Information</h3>
+        <h3 class="form-title">
+            Item Information
+            <span class="form-branch-badge" id="formBranchBadge">Branch 1 — Quezon City</span>
+        </h3>
 
         <div class="field-row">
             <label>Item Name:</label>

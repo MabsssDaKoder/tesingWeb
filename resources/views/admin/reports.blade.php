@@ -47,18 +47,12 @@
         {{-- Charts Row --}}
         <div class="charts-row">
 
-            {{-- Most Washed Color --}}
+            {{-- Most Availed Service Type --}}
             <div class="chart-card">
-                <h3 class="chart-title">Most Washed Color</h3>
+                <h3 class="chart-title">Most Availed Service Type</h3>
                 <div class="pie-chart-wrapper">
-                    <canvas id="daily-color-chart"></canvas>
-                    <div class="pie-legend">
-                        {{-- VARIABLE: daily_color_stats --}}
-                        <div class="legend-item"><span class="dot white"></span> 50% White Clothes</div>
-                        <div class="legend-item"><span class="dot black"></span> 35% Black Clothes</div>
-                        <div class="legend-item"><span class="dot colored"></span> 5% Colored Clothes</div>
-                        <div class="legend-item"><span class="dot others"></span> 10% Others</div>
-                    </div>
+                    <canvas id="daily-service-chart"></canvas>
+                    <div class="pie-legend" id="daily-service-legend"></div>
                 </div>
             </div>
 
@@ -92,23 +86,6 @@
 
         </div>
 
-        {{-- Service Receive Breakdown --}}
-        <div class="breakdown-card">
-            <h3 class="chart-title">Service Receive Breakdown</h3>
-            <div class="breakdown-row">
-                <div class="breakdown-item">
-                    <p>Ordinary</p>
-                    {{-- VARIABLE: daily_ordinary_count --}}
-                    <h2>60</h2>
-                </div>
-                <div class="breakdown-item">
-                    <p>Rush</p>
-                    {{-- VARIABLE: daily_rush_count --}}
-                    <h2>41</h2>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     {{-- ==================== WEEKLY TAB ==================== --}}
@@ -136,16 +113,10 @@
 
         <div class="charts-row">
             <div class="chart-card">
-                <h3 class="chart-title">Most Washed Color</h3>
+                <h3 class="chart-title">Most Availed Service Type</h3>
                 <div class="pie-chart-wrapper">
-                    <canvas id="weekly-color-chart"></canvas>
-                    <div class="pie-legend">
-                        {{-- VARIABLE: weekly_color_stats --}}
-                        <div class="legend-item"><span class="dot white"></span> 50% White Clothes</div>
-                        <div class="legend-item"><span class="dot black"></span> 25% Black Clothes</div>
-                        <div class="legend-item"><span class="dot colored"></span> 15% Colored Clothes</div>
-                        <div class="legend-item"><span class="dot others"></span> 10% Others</div>
-                    </div>
+                    <canvas id="weekly-service-chart"></canvas>
+                    <div class="pie-legend" id="weekly-service-legend"></div>
                 </div>
             </div>
 
@@ -177,22 +148,6 @@
             </div>
         </div>
 
-        <div class="breakdown-card">
-            <h3 class="chart-title">Service Receive Breakdown</h3>
-            <div class="breakdown-row">
-                <div class="breakdown-item">
-                    <p>Ordinary</p>
-                    {{-- VARIABLE: weekly_ordinary_count --}}
-                    <h2>340</h2>
-                </div>
-                <div class="breakdown-item">
-                    <p>Rush</p>
-                    {{-- VARIABLE: weekly_rush_count --}}
-                    <h2>160</h2>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     {{-- ==================== MONTHLY TAB ==================== --}}
@@ -220,16 +175,10 @@
 
         <div class="charts-row">
             <div class="chart-card">
-                <h3 class="chart-title">Most Washed Color</h3>
+                <h3 class="chart-title">Most Availed Service Type</h3>
                 <div class="pie-chart-wrapper">
-                    <canvas id="monthly-color-chart"></canvas>
-                    <div class="pie-legend">
-                        {{-- VARIABLE: monthly_color_stats --}}
-                        <div class="legend-item"><span class="dot white"></span> 45% White Clothes</div>
-                        <div class="legend-item"><span class="dot black"></span> 30% Black Clothes</div>
-                        <div class="legend-item"><span class="dot colored"></span> 15% Colored Clothes</div>
-                        <div class="legend-item"><span class="dot others"></span> 10% Others</div>
-                    </div>
+                    <canvas id="monthly-service-chart"></canvas>
+                    <div class="pie-legend" id="monthly-service-legend"></div>
                 </div>
             </div>
 
@@ -261,22 +210,6 @@
             </div>
         </div>
 
-        <div class="breakdown-card">
-            <h3 class="chart-title">Service Receive Breakdown</h3>
-            <div class="breakdown-row">
-                <div class="breakdown-item">
-                    <p>Ordinary</p>
-                    {{-- VARIABLE: monthly_ordinary_count --}}
-                    <h2>1,400</h2>
-                </div>
-                <div class="breakdown-item">
-                    <p>Rush</p>
-                    {{-- VARIABLE: monthly_rush_count --}}
-                    <h2>700</h2>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     {{-- ==================== ANNUALLY TAB ==================== --}}
@@ -304,16 +237,10 @@
 
         <div class="charts-row">
             <div class="chart-card">
-                <h3 class="chart-title">Most Washed Color</h3>
+                <h3 class="chart-title">Most Availed Service Type</h3>
                 <div class="pie-chart-wrapper">
-                    <canvas id="annually-color-chart"></canvas>
-                    <div class="pie-legend">
-                        {{-- VARIABLE: annual_color_stats --}}
-                        <div class="legend-item"><span class="dot white"></span> 48% White Clothes</div>
-                        <div class="legend-item"><span class="dot black"></span> 28% Black Clothes</div>
-                        <div class="legend-item"><span class="dot colored"></span> 14% Colored Clothes</div>
-                        <div class="legend-item"><span class="dot others"></span> 10% Others</div>
-                    </div>
+                    <canvas id="annually-service-chart"></canvas>
+                    <div class="pie-legend" id="annually-service-legend"></div>
                 </div>
             </div>
 
@@ -341,22 +268,6 @@
                         <span class="cname">Jiji Jojo</span>
                         <span class="amount">₱80,000</span>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="breakdown-card">
-            <h3 class="chart-title">Service Receive Breakdown</h3>
-            <div class="breakdown-row">
-                <div class="breakdown-item">
-                    <p>Ordinary</p>
-                    {{-- VARIABLE: annual_ordinary_count --}}
-                    <h2>17,000</h2>
-                </div>
-                <div class="breakdown-item">
-                    <p>Rush</p>
-                    {{-- VARIABLE: annual_rush_count --}}
-                    <h2>8,000</h2>
                 </div>
             </div>
         </div>

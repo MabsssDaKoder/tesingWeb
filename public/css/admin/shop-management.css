@@ -988,3 +988,366 @@
             font-size: 0.85rem;
         }
     }
+
+    
+.category-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+ 
+.cat-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1.5px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+ 
+.cat-btn:hover {
+    background: #f0f4f8;
+    border-color: #007bff;
+}
+ 
+.cat-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+/* ════════════════════════════════════════════════
+   ADD-ONS FORM - LIGHT THEME
+   ════════════════════════════════════════════════ */
+
+.addons-form-card {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    padding: 0.75rem 1rem;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: #fff;
+    border-color: #999;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* ════════════════════════════════════════════════
+   CATEGORY BUTTONS - Light Theme
+   ════════════════════════════════════════════════ */
+
+.category-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    padding: 0.65rem 1.2rem;
+    border: 1.5px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.cat-btn:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.cat-btn.active {
+    background: #e8e8e8;
+    color: #333;
+    border-color: #999;
+}
+
+/* ════════════════════════════════════════════════
+   PRICE INPUT GROUP - Per Pack & Per Scoop Buttons
+   ════════════════════════════════════════════════ */
+
+.price-input-group {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.price-btn {
+    padding: 0.65rem 0.85rem;
+    background: #fff;
+    color: #666;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.price-btn:hover:not(:disabled) {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.price-btn.active {
+    background: #e8e8e8;
+    color: #333;
+    border-color: #999;
+}
+
+.price-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+.price-input-group input {
+    padding: 0.65rem 0.85rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.price-input-group input:hover:not(:disabled) {
+    border-color: #999;
+}
+
+.price-input-group input:focus {
+    outline: none;
+    border-color: #999;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.price-input-group input:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    color: #999;
+    border-color: #ddd;
+}
+
+/* ════════════════════════════════════════════════
+   FORM ACTIONS - New | Edit | Confirm | Delete | Cancel
+   ════════════════════════════════════════════════ */
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.action-btn {
+    padding: 0.65rem 1.5rem;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 100px;
+    background: #fff;
+    color: #666;
+}
+
+.action-btn.new {
+    color: #666;
+    border-color: #ddd;
+    background: #fff;
+}
+
+.action-btn.new:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.action-btn.edit {
+    color: #666;
+    border-color: #ddd;
+    background: #fff;
+}
+
+.action-btn.edit:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.action-btn.add {
+    color: #666;
+    border-color: #ddd;
+    background: #fff;
+}
+
+.action-btn.add:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.action-btn.confirm {
+    color: #666;
+    border-color: #ddd;
+    background: #fff;
+}
+
+.action-btn.confirm:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.action-btn.delete {
+    color: #d97777;
+    border-color: #f0cccc;
+    background: #fff;
+}
+
+.action-btn.delete:hover {
+    background: #fef2f2;
+    border-color: #d97777;
+}
+
+.action-btn.cancel {
+    color: #666;
+    border-color: #ddd;
+    background: #fff;
+}
+
+.action-btn.cancel:hover {
+    background: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .price-input-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .price-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-input-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+
+    .category-buttons {
+        flex-direction: column;
+    }
+
+    .cat-btn {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .price-input-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .price-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-input-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+
+    .category-buttons {
+        flex-direction: column;
+    }
+
+    .cat-btn {
+        width: 100%;
+        text-align: left;
+    }
+}

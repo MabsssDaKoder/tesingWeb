@@ -439,3 +439,87 @@
         gap: 8px;
     }
 }
+
+/* ═══════════════════════════════════════════
+   WashDepot — admin-new-laundry.css
+   Place in: public/css/admin/admin-new-laundry.css
+═══════════════════════════════════════════ */
+
+/* ── Fix input text visibility ── */
+.input-group input,
+.time-input {
+    color: #1a2a3a;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+/* ── Receive Time grid: 2 equal columns ── */
+.receive-time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* ── Service Type grid: 3 columns, Pull Package same style ── */
+.service-type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Pull Package: same look as other service buttons, no special override */
+#btn-pull-package {
+    border-color: #e0e0e0;
+    background: white;
+}
+
+/* Discount row */
+#discount-display {
+    color: #e53e3e;
+    font-weight: 700;
+}
+
+#discount-label {
+    color: #e53e3e;
+}
+
+/* Receive time input */
+.time-input {
+    width: 200px;
+    padding: 12px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1a2a3a;
+    outline: none;
+    background: #fafafa;
+}
+
+.time-input:focus {
+    border-color: #2d8a8a;
+    background: white;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+    .service-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .receive-time-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-type-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .time-input {
+        width: 100%;
+    }
+}
